@@ -18,6 +18,13 @@ namespace AWSTools
         /// <returns></returns>
         public static string PreSignURL(string key, string bucket)
         {
+            using (Amazon.S3.IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client("", "", Amazon.RegionEndpoint.APSoutheast2))
+            {
+                Amazon.S3.Model.GetPreSignedUrlRequest request = new Amazon.S3.Model.GetPreSignedUrlRequest();
+                request.BucketName = bucket;
+                request.Key = key;
+                request.Protocol = Amazon.S3.Protocol.HTTPS;
+            }
             return string.Empty;
         }
     }
