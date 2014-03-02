@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSTools", "AWSTools.csproj", "{950F317B-779C-46A2-BFEE-17C80E40E0A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSTools.Test", "..\AWSTools.Test\AWSTools.Test.csproj", "{366850F4-12DB-4161-929B-7F2CC765D12D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{950F317B-779C-46A2-BFEE-17C80E40E0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{950F317B-779C-46A2-BFEE-17C80E40E0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{950F317B-779C-46A2-BFEE-17C80E40E0A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{366850F4-12DB-4161-929B-7F2CC765D12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{366850F4-12DB-4161-929B-7F2CC765D12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{366850F4-12DB-4161-929B-7F2CC765D12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{366850F4-12DB-4161-929B-7F2CC765D12D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
