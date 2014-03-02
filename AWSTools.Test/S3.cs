@@ -34,7 +34,7 @@ namespace AWSTools.Test
         public void ListObjectsResponse()
         {
             AWSTools.CONFIG.SetConfig("AKIAIQF2ZHD4CHMMASHQ", "S8Mjn0vlTv87UmmmOMqRoWK1L1g41wwvXJAm8ij5", Amazon.RegionEndpoint.APSoutheast2);
-            Amazon.S3.Model.ListObjectsResponse response = AWSTools.S3.ListObjectsResponse("aws-tools-testing");
+            Amazon.S3.Model.ListObjectsResponse response = AWSTools.S3.ListObjectsResponse("aws-tools-testing", "a/", "/");
             Assert.AreEqual(1, response.CommonPrefixes.Count);
         }
     }
