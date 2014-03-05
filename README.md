@@ -35,6 +35,12 @@ Gets an object from S3 as a [GetObjectResponse](http://docs.aws.amazon.com/sdkfo
 - `bucket` - The name of the bucket where the key is stored
 - `key` - The object key where the file is located on s3
 
+### GetObjectMetadataResponse
+Gets information and metadata for an object on S3 without needing to download it in the form of a [GetObjectMetadataResponse](http://docs.aws.amazon.com/sdkfornet/latest/apidocs/items/TS3GetObjectMetadataResponse_NET4_5.html). Useful for getting file content length and type as well as any attached Amazon metadata. [GetObjectMetadataRequest](http://docs.aws.amazon.com/sdkfornet/latest/apidocs/items/TS3GetObjectMetadataRequest_NET4_5.html)
+
+- `bucket` - The name of the bucket where the file is stored on S3
+- `key` - The key location of the object on S3
+
 ### ListObjects [4 Overloads]
 Gets S3 objects in a bucket as a [`List<Amazon.S3.Model.S3Object>`](http://docs.aws.amazon.com/sdkfornet/latest/apidocs/items/TS3S3Object_NET4_5.html), using overload parameters to further filter the results. Useful for seeing all keys in a bucket or a sub directory of the bucket. [ListObjectsRequest](http://docs.aws.amazon.com/sdkfornet/latest/apidocs/items/TS3ListObjectsRequest_NET4_5.html)
 
@@ -61,3 +67,4 @@ Uploads a file to an S3 bucket as a specified key and returns a [PutObjectRespon
 - `key` - The key to store the object under on s3
 - `stream` - The stream of the file to upload to S3
 - `storageClass` - The [`Amazon.S3.S3StorageClass`](http://docs.aws.amazon.com/sdkfornet/latest/apidocs/items/TS3_S3StorageClass_NET4_5.html) that the object is stored under (default is Standard)
+
