@@ -161,5 +161,35 @@ namespace AWSTools
             }
             return response;
         }
+
+        public static Amazon.S3.Model.PutObjectResponse PutObjectResponse(string bucket, string key, Stream stream, Amazon.S3.S3StorageClass storageClass = null)
+        {
+            Amazon.S3.Model.PutObjectResponse response = new Amazon.S3.Model.PutObjectResponse();
+            using (Amazon.S3.IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint))
+            {
+                Amazon.S3.Model.PutObjectRequest request = new Amazon.S3.Model.PutObjectRequest()
+                {
+                    BucketName = bucket,
+                    Key = key,
+                    StorageClass = (storageClass == null ? Amazon.S3.S3StorageClass.Standard : storageClass),
+                    InputStream = stream
+                };
+
+                response = client.PutObject(request);
+            }
+            return response;
+        }
+
+        public static Amazon.S3.Model.PutObjectResponse PutObject(string bucket, string key, FileStream stream, Amazon.S3.S3StorageClass storageClass = null)
+        {
+            return PutObjectResponse(bucket, key, stream, storageClass);
+        }
+
+        public static Amazon.S3.Model.PutObjectResponse PutObject(string bucket, string key, byte[] data, Amazon.S3.S3StorageClass storageClass = null)
+        {
+            MemoryStream stream = new MemoryStream();
+            stream.Write(data, 0, data.Length);
+            return PutObjectResponse(bucket, key, stream, storageClass);
+        }
     }
 }
