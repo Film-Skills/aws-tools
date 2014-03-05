@@ -74,6 +74,28 @@ namespace AWSTools
         }
 
         /// <summary>
+        /// Gets information and metadata for an object on
+        /// S3 without needing to download it.
+        /// </summary>
+        /// <param name="bucket">The bucket that the object is in.</param>
+        /// <param name="key">The key location for the object.</param>
+        /// <returns></returns>
+        public static Amazon.S3.Model.GetObjectMetadataResponse GetObjectMetadataResponse(string bucket, string key)
+        {
+            Amazon.S3.Model.GetObjectMetadataResponse response = new Amazon.S3.Model.GetObjectMetadataResponse();
+            using (Amazon.S3.IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint))
+            {
+                Amazon.S3.Model.GetObjectMetadataRequest request = new Amazon.S3.Model.GetObjectMetadataRequest()
+                {
+                    BucketName = bucket,
+                    Key = key
+                };
+                response = client.GetObjectMetadata(request);
+            }
+            return response;
+        }
+
+        /// <summary>
         /// Overload method for getting S3 objects in a bucket.
         /// Gets 1000 objects max.
         /// </summary>
