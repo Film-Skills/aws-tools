@@ -162,6 +162,15 @@ namespace AWSTools
             return response;
         }
 
+        /// <summary>
+        /// Put an object to an S3 bucket
+        /// from a stream.
+        /// </summary>
+        /// <param name="bucket">The name of the bucket to upload to.</param>
+        /// <param name="key">The key to store the object as on S3.</param>
+        /// <param name="stream">The stream representing the file data.</param>
+        /// <param name="storageClass">The Amazon.S3.S3StorageClass for the file (default standard)</param>
+        /// <returns></returns>
         public static Amazon.S3.Model.PutObjectResponse PutObjectResponse(string bucket, string key, Stream stream, Amazon.S3.S3StorageClass storageClass = null)
         {
             Amazon.S3.Model.PutObjectResponse response = new Amazon.S3.Model.PutObjectResponse();
@@ -180,11 +189,31 @@ namespace AWSTools
             return response;
         }
 
+        /// <summary>
+        /// Uploads a file from a filestream
+        /// to the specified S3 bucket and key,
+        /// overriding any existing files.
+        /// </summary>
+        /// <param name="bucket">The name of the bucket to upload to.</param>
+        /// <param name="key">The key to store the object as on S3.</param>
+        /// <param name="stream">The filestream representing the file data.</param>
+        /// <param name="storageClass">The Amazon.S3.S3StorageClass for the file (default standard)</param>
+        /// <returns></returns>
         public static Amazon.S3.Model.PutObjectResponse PutObject(string bucket, string key, FileStream stream, Amazon.S3.S3StorageClass storageClass = null)
         {
             return PutObjectResponse(bucket, key, stream, storageClass);
         }
 
+        /// <summary>
+        /// Uploads a file from a byte array
+        /// to the specified S3 bucket and key,
+        /// overriding any existing files.
+        /// </summary>
+        /// <param name="bucket">The name of the bucket to upload to.</param>
+        /// <param name="key">The key to store the object as on S3.</param>
+        /// <param name="data">The byte array representing the file data.</param>
+        /// <param name="storageClass">The Amazon.S3.S3StorageClass for the file (default standard)</param>
+        /// <returns></returns>
         public static Amazon.S3.Model.PutObjectResponse PutObject(string bucket, string key, byte[] data, Amazon.S3.S3StorageClass storageClass = null)
         {
             MemoryStream stream = new MemoryStream();
