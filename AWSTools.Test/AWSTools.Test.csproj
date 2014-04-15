@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK">
+    <Reference Include="AWSSDK, Version=2.0.10.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AWSTools\packages\AWSSDK.2.0.10.0\lib\net45\AWSSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
