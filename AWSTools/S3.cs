@@ -22,7 +22,7 @@ namespace AWSTools
         public static string PreSignURL(string bucket, string key, double expiresIn = 5, Amazon.S3.Protocol protocol = Amazon.S3.Protocol.HTTP)
         {
             string url = string.Empty;
-            using (Amazon.S3.IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint))
+            using (Amazon.S3.IAmazonS3 client = new Factory().S3Client())
             {
                 Amazon.S3.Model.GetPreSignedUrlRequest request = new Amazon.S3.Model.GetPreSignedUrlRequest()
                 {
@@ -63,7 +63,7 @@ namespace AWSTools
         public static Amazon.S3.Model.GetObjectResponse GetObjectResponse(string bucket, string key)
         {
             Amazon.S3.Model.GetObjectResponse response = new  Amazon.S3.Model.GetObjectResponse();
-            using (Amazon.S3.IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint)) {
+            using (Amazon.S3.IAmazonS3 client = new Factory().S3Client()) {
                 Amazon.S3.Model.GetObjectRequest request = new Amazon.S3.Model.GetObjectRequest() {
                     BucketName = bucket,
                     Key = key
@@ -83,7 +83,7 @@ namespace AWSTools
         public static Amazon.S3.Model.GetObjectMetadataResponse GetObjectMetadataResponse(string bucket, string key)
         {
             Amazon.S3.Model.GetObjectMetadataResponse response = new Amazon.S3.Model.GetObjectMetadataResponse();
-            using (Amazon.S3.IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint))
+            using (Amazon.S3.IAmazonS3 client = new Factory().S3Client())
             {
                 Amazon.S3.Model.GetObjectMetadataRequest request = new Amazon.S3.Model.GetObjectMetadataRequest()
                 {
@@ -164,7 +164,7 @@ namespace AWSTools
                                                                               string marker = null)
         {
             Amazon.S3.Model.ListObjectsResponse response = new Amazon.S3.Model.ListObjectsResponse();
-            using (Amazon.S3.IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint))
+            using (Amazon.S3.IAmazonS3 client = new Factory().S3Client())
             {
                 Amazon.S3.Model.ListObjectsRequest request = new Amazon.S3.Model.ListObjectsRequest()
                 {
@@ -196,7 +196,7 @@ namespace AWSTools
         public static Amazon.S3.Model.PutObjectResponse PutObjectResponse(string bucket, string key, Stream stream, Amazon.S3.S3StorageClass storageClass = null)
         {
             Amazon.S3.Model.PutObjectResponse response = new Amazon.S3.Model.PutObjectResponse();
-            using (Amazon.S3.IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint))
+            using (Amazon.S3.IAmazonS3 client = new Factory().S3Client())
             {
                 Amazon.S3.Model.PutObjectRequest request = new Amazon.S3.Model.PutObjectRequest()
                 {

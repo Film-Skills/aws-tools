@@ -45,9 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONFIG.cs" />
+    <Compile Include="Factory.cs" />
     <Compile Include="S3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
