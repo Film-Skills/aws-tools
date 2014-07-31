@@ -16,5 +16,17 @@ namespace AWSTools
                 return Amazon.AWSClientFactory.CreateAmazonS3Client(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint);
             }
         }
+
+        public Amazon.SQS.IAmazonSQS SQSClient()
+        {
+            if (CONFIG.UseIAM)
+            {
+                return Amazon.AWSClientFactory.CreateAmazonSQSClient(CONFIG.Endpoint);
+            }
+            else
+            {
+                return Amazon.AWSClientFactory.CreateAmazonSQSClient(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint);
+            }
+        }
     }
 }
