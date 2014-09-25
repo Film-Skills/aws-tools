@@ -28,5 +28,17 @@ namespace AWSTools
                 return Amazon.AWSClientFactory.CreateAmazonSQSClient(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint);
             }
         }
+
+        public Amazon.SimpleDB.IAmazonSimpleDB SimpleDBClient()
+        {
+            if (CONFIG.UseIAM)
+            {
+                return Amazon.AWSClientFactory.CreateAmazonSimpleDBClient(CONFIG.Endpoint);
+            }
+            else
+            {
+                return Amazon.AWSClientFactory.CreateAmazonSimpleDBClient(CONFIG.AccessKey, CONFIG.SecretKey, CONFIG.Endpoint);
+            }
+        }
     }
 }
