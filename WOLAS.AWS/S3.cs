@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AWSTools
+namespace WOLAS.AWS
 {
     public static class S3
     {

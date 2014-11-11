@@ -35,9 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK, Version=2.2.4.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+    <Reference Include="AWSSDK, Version=2.3.5.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AWSTools\packages\AWSSDK.2.2.4.0\lib\net45\AWSSDK.dll</HintPath>
+      <HintPath>..\AWSTools\packages\AWSSDK.2.3.5.0\lib\net45\AWSSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -58,9 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AWSTools\AWSTools.csproj">
+    <ProjectReference Include="..\WOLAS.AWS\WOLAS.AWS.csproj">
       <Project>{950f317b-779c-46a2-bfee-17c80e40e0a8}</Project>
-      <Name>AWSTools</Name>
+      <Name>WOLAS.AWS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

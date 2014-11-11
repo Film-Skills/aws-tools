@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AWSTools
+namespace WOLAS.AWS
 {
     public static class SQS
     {

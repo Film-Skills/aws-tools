@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSTools", "AWSTools.csproj", "{950F317B-779C-46A2-BFEE-17C80E40E0A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOLAS.AWS", "WOLAS.AWS.csproj", "{950F317B-779C-46A2-BFEE-17C80E40E0A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSTools.Test", "..\AWSTools.Test\AWSTools.Test.csproj", "{366850F4-12DB-4161-929B-7F2CC765D12D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOLAS.AWS.Test", "..\WOLAS.AWS.Test\WOLAS.AWS.Test.csproj", "{366850F4-12DB-4161-929B-7F2CC765D12D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
